@@ -33,12 +33,26 @@ const Profile = () => {
       
     }
   }
+
+  async function verify(){
+    try {
+      
+    } catch (error: any) {
+      console.error(error.message);
+      
+    }
+  }
+
+
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <h1>Profile</h1>
       <p>Profile page</p>
       <button onClick={logout}>Logout</button>
       <button onClick={userDetails}>User Details</button>
+      <button onClick={verify}>User Details</button>
+
 
     </div>
   );
