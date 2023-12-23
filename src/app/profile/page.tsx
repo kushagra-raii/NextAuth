@@ -34,14 +34,6 @@ const Profile = () => {
     }
   }
 
-  async function verify(){
-    try {
-      
-    } catch (error: any) {
-      console.error(error.message);
-      
-    }
-  }
 
 
 
@@ -51,7 +43,6 @@ const Profile = () => {
       <p>Profile page</p>
       <button onClick={logout}>Logout</button>
       <button onClick={userDetails}>User Details</button>
-      <button onClick={verify}>User Details</button>
 
 
     </div>

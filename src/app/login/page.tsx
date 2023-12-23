@@ -4,7 +4,6 @@ import React, {useEffect} from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { log } from "console";
 
 const LoginPage = () => {
   const router = useRouter();
@@ -36,6 +35,16 @@ const LoginPage = () => {
         
       setLoading(false);
       }
+  }
+
+  const forgot = async () =>{
+    setLoading(true);
+
+    const response = await axios.post("/api/users/forgotpassword", user);
+    console.log(response);
+    
+    setLoading(false);
+
   }
 
   useEffect(() => {
@@ -88,6 +97,9 @@ const LoginPage = () => {
 
         <button onClick={onLogin} className="border rounded-lg mt-5 py-3">
           Login
+        </button>
+        <button onClick={forgot} className="border rounded-lg mt-5 py-3">
+          forgot password
         </button>
       </div>
       <Link className=" underline" href="/signup">Visit Signup page</Link>
